@@ -84,7 +84,7 @@ function DonorRegistrationForm() {
       if (!response.ok) {
         throw new Error("Failed to register donor");
       }
-      navigate("/home");
+      navigate("/login-donor");
 
       setSuccess(true);
       setError("");

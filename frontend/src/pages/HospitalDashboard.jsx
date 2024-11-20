@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 const HospitalDashboard = () => {
   const [bloodRequest, setBloodRequest] = useState({
@@ -99,7 +101,7 @@ const HospitalDashboard = () => {
           to="/hospital-dashboard/manage-inventory"
           className="bg-[#E63946] text-white text-center px-6 py-4 rounded-lg text-lg font-semibold hover:bg-[#d82f3e]"
         >
-          Manage Blood Inventory
+          Manage Blood Bank
         </Link>
 
         {/* View Blood Inventory Button */}

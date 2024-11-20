@@ -1,10 +1,11 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function ManageRequests() {
   const [requests, setRequests] = useState([
-    { bloodType: 'A+', quantity: 2, status: 'Pending' },
-    { bloodType: 'O-', quantity: 1, status: 'Approved' },
-    { bloodType: 'B+', quantity: 3, status: 'Rejected' },
+    { bloodType: 'A+', quantity: 2, status: 'Pending', date: new Date().toLocaleDateString() },
+    { bloodType: 'O-', quantity: 1, status: 'Approved', date: new Date().toLocaleDateString() },
+    { bloodType: 'B+', quantity: 3, status: 'Rejected', date: new Date().toLocaleDateString() },
+    { bloodType: 'AB-', quantity: 3, status: 'Rejected', date: new Date().toLocaleDateString() },
     // Add more data here as needed
   ]);
 
@@ -12,6 +13,13 @@ function ManageRequests() {
     // Fetch request data here if from an API
     // setRequests(data);
   }, []);
+
+  // Function to handle status change
+  const handleStatusChange = (index, newStatus) => {
+    const updatedRequests = [...requests];
+    updatedRequests[index].status = newStatus;
+    setRequests(updatedRequests);
+  };
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col items-center">
@@ -29,6 +37,7 @@ function ManageRequests() {
               <th className="px-4 py-2 text-left">Blood Type</th>
               <th className="px-4 py-2 text-left">Quantity</th>
               <th className="px-4 py-2 text-left">Status</th>
+              <th className="px-4 py-2 text-left">Date of Request</th>
             </tr>
           </thead>
           <tbody>
@@ -36,7 +45,18 @@ function ManageRequests() {
               <tr key={index} className="border-b">
                 <td className="px-4 py-3 text-gray-700">{request.bloodType}</td>
                 <td className="px-4 py-3 text-gray-700">{request.quantity}</td>
-                <td className="px-4 py-3 text-gray-700">{request.status}</td>
+                <td className="px-4 py-3 text-gray-700">
+                  {/* Status Dropdown */}
+                  <select
+                    value={request.status}
+                    onChange={(e) => handleStatusChange(index, e.target.value)}
+                    className="bg-gray-200 border border-gray-300 p-2 rounded-md"
+                  >
+                    <option value="Pending">Pending</option>
+                    <option value="Resolved">Resolved</option>
+                  </select>
+                </td>
+                <td className="px-4 py-3 text-gray-700">{request.date}</td>
               </tr>
             ))}
           </tbody>
@@ -44,9 +64,9 @@ function ManageRequests() {
       </div>
 
       {/* Footer Section */}
-      <footer className="bg-[#E63946] text-white text-center py-4 mt-auto w-full">
+      {/* <footer className="bg-[#E63946] text-white text-center py-4 mt-auto w-full">
         <p className="text-sm">© 2024 Blood Donation Management System. All rights reserved.</p>
-      </footer>
+      </footer> */}
     </div>
   );
 }

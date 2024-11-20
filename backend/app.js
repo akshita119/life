@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 // CORS Configuration
 const corsOptions = {
-  origin: "http://localhost:5174", // Allow requests from your frontend domain
+  origin: "http://localhost:5173", // Allow requests from your frontend domain
   methods: "GET,POST,PUT,DELETE,PATCH", // Allow the necessary HTTP methods
   allowedHeaders: "Content-Type, Authorization, credentials", // Allow required headers
   credentials: true, // Allow sending cookies or authorization headers

@@ -20,6 +20,125 @@ function FAQ() {
       answer: 'Generally, healthy individuals between the ages of 18 and 65, who weigh at least 50 kg, and have no contraindications are eligible to donate blood.',
     },
     {
+      question: 'What are the components of donated blood?',
+      answer: (
+        <div>
+          <p className="mb-4">
+            Donated blood is separated into various components to treat specific medical conditions:
+          </p>
+          <div className="overflow-x-auto">
+            <table className="min-w-full border border-gray-300 rounded-lg shadow-md bg-white">
+              <thead>
+                <tr className="bg-gradient-to-r from-green-500 to-teal-600 text-white">
+                  <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Component</th>
+                  <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Function</th>
+                  <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Storage Duration</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr>
+                  <td className="px-6 py-4 font-semibold text-gray-800">Red Blood Cells</td>
+                  <td className="px-6 py-4 text-gray-600">Carry oxygen to tissues</td>
+                  <td className="px-6 py-4 text-gray-600">Up to 42 days</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 font-semibold text-gray-800">Plasma</td>
+                  <td className="px-6 py-4 text-gray-600">Contains clotting factors</td>
+                  <td className="px-6 py-4 text-gray-600">Up to 1 year (frozen)</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 font-semibold text-gray-800">Platelets</td>
+                  <td className="px-6 py-4 text-gray-600">Help in blood clotting</td>
+                  <td className="px-6 py-4 text-gray-600">Up to 5 days</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ),
+    },
+    {
+      question: 'What is blood compatibility?',
+      answer: (
+        <div>
+          <p className="mb-4">
+            Blood compatibility depends on blood groups and Rh factors. The following table summarizes who can donate to whom:
+          </p>
+          <div className="overflow-x-auto">
+            <table className="min-w-full border border-gray-300 rounded-lg shadow-md bg-white">
+              <thead>
+                <tr className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white">
+                  <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Blood Group</th>
+                  <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Can Donate To</th>
+                  <th className="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Can Receive From</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr>
+                  <td className="px-6 py-4 font-semibold text-gray-800">O-</td>
+                  <td className="px-6 py-4 text-gray-600">All Blood Groups</td>
+                  <td className="px-6 py-4 text-gray-600">O-</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 font-semibold text-gray-800">O+</td>
+                  <td className="px-6 py-4 text-gray-600">O+, A+, B+, AB+</td>
+                  <td className="px-6 py-4 text-gray-600">O+, O-</td>
+                </tr>
+                <tr className="bg-gray-100">
+                  <td className="px-6 py-4 font-semibold text-gray-800">A-</td>
+                  <td className="px-6 py-4 text-gray-600">A-, A+, AB-, AB+</td>
+                  <td className="px-6 py-4 text-gray-600">A-, O-</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 font-semibold text-gray-800">A+</td>
+                  <td className="px-6 py-4 text-gray-600">A+, AB+</td>
+                  <td className="px-6 py-4 text-gray-600">A+, A-, O+, O-</td>
+                </tr>
+                <tr className="bg-gray-100">
+                  <td className="px-6 py-4 font-semibold text-gray-800">B-</td>
+                  <td className="px-6 py-4 text-gray-600">B-, B+, AB-, AB+</td>
+                  <td className="px-6 py-4 text-gray-600">B-, O-</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 font-semibold text-gray-800">B+</td>
+                  <td className="px-6 py-4 text-gray-600">B+, AB+</td>
+                  <td className="px-6 py-4 text-gray-600">B+, B-, O+, O-</td>
+                </tr>
+                <tr className="bg-gray-100">
+                  <td className="px-6 py-4 font-semibold text-gray-800">AB-</td>
+                  <td className="px-6 py-4 text-gray-600">AB-, AB+</td>
+                  <td className="px-6 py-4 text-gray-600">AB-, A-, B-, O-</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 font-semibold text-gray-800">AB+</td>
+                  <td className="px-6 py-4 text-gray-600">AB+</td>
+                  <td className="px-6 py-4 text-gray-600">All Blood Groups</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ),
+    },
+    
+    
+    {
+      question: 'How to prepare for blood donation?',
+      answer: (
+        <div>
+          <p className="mb-4">
+            Follow these guidelines to ensure a smooth donation experience:
+          </p>
+          <ul className="list-disc ml-6 text-gray-600">
+            <li>Stay hydrated by drinking plenty of water before donating.</li>
+            <li>Eat a balanced meal rich in iron.</li>
+            <li>Get a good night’s sleep prior to your donation.</li>
+          </ul>
+        </div>
+      ),
+    },
+    
+    {
       question: 'How often can I donate blood?',
       answer: 'You can donate whole blood once every 56 days (8 weeks). Plasma donations can be made every 28 days.',
     },

@@ -100,7 +100,7 @@ function AboutUs() {
         <p className="mb-8 text-lg max-w-3xl mx-auto">
           Be a part of our mission to make blood donation more accessible. Whether you're a donor or a hospital, together we can create a world where everyone has access to life-saving resources.
         </p>
-        <a href="/register" className="bg-white text-red-500 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">
+        <a href="/login-donor" className="bg-white text-red-500 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">
           Get Involved
         </a>
       </section>

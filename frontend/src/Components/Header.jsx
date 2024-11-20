@@ -39,7 +39,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
-              src="/logo.png" // Replace with your image path or URL
+              src="https://th.bing.com/th/id/OIP.yjNWafT_5skmEb3xBT__BAHaMk?rs=1&pid=ImgDetMain" // Replace with your image path or URL
               alt="Logo"
               className="h-12 mr-3"
             />
@@ -49,7 +49,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center lg:order-2">
             {parsedDonor || parsedHospital ? (
               <span className="text-gray-700 flex items-center">
-                Hello,{" "}
+                Hi,{" "}
                 {parsedDonor?.userId?.name || parsedHospital?.name || "User"}
                 <button
                   onClick={handleLogout}

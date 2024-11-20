@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 const HospitalList = () => {
   const [hospitals, setHospitals] = useState([]);
   const [selectedHospital, setSelectedHospital] = useState(null);
@@ -137,7 +138,7 @@ const HospitalList = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-6 bg-red-200">
       <h1 className="text-3xl font-bold text-center mb-8">Hospital List</h1>
       <div className="flex flex-wrap justify-center gap-6">
         {hospitals.map((hospital) => (
@@ -145,7 +146,7 @@ const HospitalList = () => {
             key={hospital._id}
             className="bg-white shadow-md rounded-lg p-6 w-64 hover:shadow-xl transition-shadow duration-300"
           >
-            <h2 className="text-xl font-semibold text-blue-600 mb-2">
+            <h2 className="text-xl font-semibold text-orange-700 mb-2">
               {hospital.name}
             </h2>
             <p className="text-gray-600">{hospital.city}</p>
@@ -168,7 +169,7 @@ const HospitalList = () => {
               className={`px-4 py-2 rounded transition-colors duration-300 ${
                 !donationData.bloodType ||
                 donationData.bloodType === "Not Applicable"
-                  ? "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-300 " // Gray color when no blood type selected
+                  ? "bg-red-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-300 " // Gray color when no blood type selected
                   : "bg-red-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-300" // Blue color when blood type is available
               }`}
             >
@@ -318,7 +319,7 @@ const HospitalList = () => {
               type="submit"
               className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors duration-300"
             >
-              Submit Donation
+              Book Appointment
             </button>
           </form>
         </div>
@@ -327,4 +328,4 @@ const HospitalList = () => {
   );
 };
 
-export default HospitalList;
+export default HospitalList;  
