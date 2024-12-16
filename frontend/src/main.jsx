@@ -22,6 +22,11 @@ import ViewInventory from "./pages/ViewInventory.jsx";
 import ManageRequests from "./pages/ManageRequests.jsx";
 import ManageInventory from "./pages/ManageInventory.jsx";
 import HospitalList from "./Components/HospitalList.jsx";
+import DonorDashboard from "./pages/DonorDashboard.jsx";
+import BookAppointment from "./pages/BookAppointment.jsx";
+import BloodBankRegistrationForm from "./pages/BloodBankRegistrationForm.jsx";
+import BloodBankManagement from "./pages/BloodBankManagement.jsx";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
@@ -34,6 +39,10 @@ const router = createBrowserRouter(
       <Route path="/login-hospital" element={<LoginHospital />} />
       <Route path="/hospital-dashboard" element={<HospitalDashboard />} />
       <Route path="/hospitalist" element={<HospitalList />} />
+      <Route path="/donordashboard" element={<DonorDashboard />} />
+      <Route path="/book-appointment" element={<BookAppointment />} />
+      <Route path="/register-bloodBank" element={<BloodBankRegistrationForm/>}   />
+      <Route path="/blood-bank-management" element={<BloodBankManagement />} />
       <Route
         path="/hospital-dashboard/request-blood"
         element={<RequestBlood />}

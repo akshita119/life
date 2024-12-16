@@ -93,6 +93,10 @@ function ContactUs() {
               <p className="text-gray-600">+91 (234) 567-8900</p>
             </div>
             <div className="mb-4">
+              <p className="font-medium text-gray-700"> Another Dummy Phone</p>
+              <p className="text-gray-600">+91 8078690114</p>
+            </div>
+            <div className="mb-4">
               <p className="font-medium text-gray-700">Email</p>
               <p className="text-gray-600">contact@bloodmanagement.org</p>
             </div>

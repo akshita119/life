@@ -5,7 +5,7 @@ import User from "../models/User.model.js";
 import Donor from "../models/Donor.model.js";
 import Hospital from "../models/Hospital.model.js";
 import verifyToken from "../middlewares/auth.js";
-import sendBloodRequestToDonor from "../utils/sendMail.js"; // Your existing mail function
+import {sendBloodRequestToDonor, bookAppointment} from "../utils/sendMail.js"; // Your existing mail function
 // import { sendSmsToDonor } from "../utils/sendSmsToDonor.js"; // Import send SMS function
 
 const router = express.Router();
@@ -73,11 +73,56 @@ router.post("/hospitals/me/requestBlood", verifyToken, async (req, res) => {
           );
         }
       }
-    }0
+    }
     res.status(200).json({ message: "Blood request submitted successfully." });
   } catch (error) {
     console.error("Error submitting blood request:", error);
     res.status(500).json({ message: "An error occurred.", error: error.message });
+  }
+});
+
+router.post("/hospitals/me/bookAppointment", verifyToken, async (req, res) => {
+  try {
+    const { donorId, appointmentDate } = req.body;
+
+    // Validate input data
+    if (!donorId || !appointmentDate) {
+      return res.status(400).json({ message: "Donor ID and appointment date are required." });
+    }
+
+    console.log("Request received to book appointment for donor ID:", donorId);
+    
+    // Fetch hospital details using the authenticated hospital's ID
+    const hospital = await Hospital.findById(req.hospitalId);
+    if (!hospital) {
+      console.log("Hospital not found");
+      return res.status(404).json({ message: "Hospital not found." });
+    }
+
+    // Fetch donor details
+    const donor = await Donor.findById(donorId);
+    if (!donor) {
+      console.log("Donor not found");
+      return res.status(404).json({ message: "Donor not found." });
+    }
+
+    console.log("Found donor:", donor);
+
+    // Update donor's appointment date
+    donor.appointmentDate = appointmentDate;
+    await donor.save();
+    console.log("Donor appointment date updated successfully");
+
+    // Notify the hospital about the new appointment
+    await bookAppointment(hospital, donor);
+    console.log("Appointment email sent to the hospital");
+
+
+    // Respond with success
+    res.status(200).json({ message: "Appointment successfully booked." });
+  } catch (error) {
+    console.error("Error booking appointment:", error);
+    res.status(500).json({ message: "An error occurred while booking the appointment.", error: error.message });
   }
 });
 

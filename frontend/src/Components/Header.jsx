@@ -95,6 +95,7 @@ export default function Header() {
                   About Us
                 </NavLink>
               </li>
+              
               <li>
                 <NavLink
                   to="/contact"
@@ -107,6 +108,20 @@ export default function Header() {
                   Contact Us
                 </NavLink>
               </li>
+              <li>
+                  <NavLink
+                    to="/hospitalist"
+                    className={({ isActive }) =>
+                      `block ${
+                        isActive ? "text-orange-700" : "text-gray-700"
+                      } py-2 pr-4 pl-3 duration-200 hover:text-orange-700 lg:p-0`
+                    }
+                  >
+                    Hospital List
+                  </NavLink>
+                </li>
+              
+              
               {parsedHospital && (
                 <li>
                   <NavLink
@@ -123,17 +138,31 @@ export default function Header() {
               )}
               {parsedDonor && (
                 <li>
-                  <NavLink
-                    to="/hospitalist"
-                    className={({ isActive }) =>
-                      `block ${
-                        isActive ? "text-orange-700" : "text-gray-700"
-                      } py-2 pr-4 pl-3 duration-200 hover:text-orange-700 lg:p-0`
-                    }
-                  >
-                    Hospital List
-                  </NavLink>
-                </li>
+                <NavLink
+                  to="/book-appointment"
+                  className={({ isActive }) =>
+                    `block ${
+                      isActive ? "text-orange-700" : "text-gray-700"
+                    } py-2 pr-4 pl-3 duration-200 hover:text-orange-700 lg:p-0`
+                  }
+                >
+                  Donate
+                </NavLink>
+              </li>
+              )}
+              {parsedDonor && (
+                <li>
+                <NavLink
+                  to="/donordashboard"
+                  className={({ isActive }) =>
+                    `block ${
+                      isActive ? "text-orange-700" : "text-gray-700"
+                    } py-2 pr-4 pl-3 duration-200 hover:text-orange-700 lg:p-0`
+                  }
+                >
+                  You
+                </NavLink>
+              </li>
               )}
             </ul>
           </div>

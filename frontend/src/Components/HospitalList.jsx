@@ -1,7 +1,10 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
 const HospitalList = () => {
+  const navigate = useNavigate(); 
   const [hospitals, setHospitals] = useState([]);
   const [selectedHospital, setSelectedHospital] = useState(null);
   const [showDonateForm, setShowDonateForm] = useState(false);
@@ -50,10 +53,12 @@ const HospitalList = () => {
   const storedDonor = localStorage.getItem("donor");
   const donor = storedDonor ? JSON.parse(storedDonor) : null;
 
-  if (!donor) {
-    console.error("No donor data found in localStorage");
-    return <div>No donor data available. Please log in again.</div>;
-  }
+  useEffect(() => {
+    if (!donor) {
+      console.error("No donor data found in localStorage");
+      navigate("/login-donor"); // Redirect to login page
+    }
+  }, [donor, navigate]);
 
   const handleShowDonateForm = (bloodType) => {
     setShowDonateForm(true);

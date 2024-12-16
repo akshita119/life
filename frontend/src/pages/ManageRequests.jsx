@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 function ManageRequests() {
   const [requests, setRequests] = useState([
     { bloodType: 'A+', quantity: 2, status: 'Pending', date: new Date().toLocaleDateString() },
-    { bloodType: 'O-', quantity: 1, status: 'Approved', date: new Date().toLocaleDateString() },
-    { bloodType: 'B+', quantity: 3, status: 'Rejected', date: new Date().toLocaleDateString() },
-    { bloodType: 'AB-', quantity: 3, status: 'Rejected', date: new Date().toLocaleDateString() },
+    { bloodType: 'O-', quantity: 1, status: 'Approved', date: "16/11/2024" },
+    { bloodType: 'B+', quantity: 3, status: 'Rejected', date: "16/11/2024"},
+    { bloodType: 'AB-', quantity: 3, status: 'Rejected', date: "15/11/2024" },
     // Add more data here as needed
   ]);
 
